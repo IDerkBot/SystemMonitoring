@@ -1,0 +1,20 @@
+﻿<Page x:Class="SystemMonitoring.FieldMonitoring"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SystemMonitoring"
+      mc:Ignorable="d" 
+      d:DesignHeight="850" d:DesignWidth="1600"
+      Title="FieldMonitoring">
+
+    <Grid>
+        <Label Content="Район: " Margin="35,25,0,0" Width="200" Height="21" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Light" Padding="0"/>
+        <Label Content="Поле: " Margin="35,50,0,0" Width="200" Height="21" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Light" Padding="0"/>
+        <Label Content="Культура: " Margin="35,75,0,0" Width="200" Height="21" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Light" Padding="0"/>
+        <Label Content="Статус: " Margin="35,100,0,0" Width="200" Height="21" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Light" Padding="0"/>
+        <Label Content="Дата посева: " Margin="35,125,0,0" Width="200" Height="21" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" FontWeight="Light" Padding="0"/>
+        
+        
+    </Grid>
+</Page>

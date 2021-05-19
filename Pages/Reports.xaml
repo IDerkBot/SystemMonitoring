@@ -1,0 +1,24 @@
+﻿<Page x:Class="SystemMonitoring.Reports"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SystemMonitoring"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="800"
+      Title="Reports" SizeChanged="ChangedSize">
+
+    <Grid>
+        <Button Style="{StaticResource BtnBack}"/>
+        <Label Content="Выберите расположение файлов:" Margin="75, 10, 20, 0" VerticalAlignment="Top"/>
+        <TextBox Name="ResearchField" VerticalAlignment="Top" Height="25" Margin="75,40,180,0"/>
+        <Button Name="ResearchBtn" Content="Обзор" VerticalAlignment="Top" HorizontalAlignment="Right" Width="150" Height="25" Margin="0,40,20,0"/>
+        <Grid Margin="10,90,10,10">
+            <Grid Name="ExcelPanel" Background="LightGreen" Width="300" Margin="0" HorizontalAlignment="Left"/>
+            <Grid Name="WordPanel" Background="LightBlue" Width="300" Margin="0" HorizontalAlignment="Right"/>
+        </Grid>
+        <Label Name="SizeValue" Content="123" VerticalAlignment="Top"/>
+
+
+    </Grid>
+</Page>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.IO;
 
 namespace SystemMonitoring
@@ -8,19 +9,17 @@ namespace SystemMonitoring
         public static string GetPathConfig()
         {
             string appdataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            string path = $@"{appdataPath}\SystemMonitoring\config.txt";
+            string path = $@"{appdataPath}\{DB.DirectoryName}\{DB.ConfigName}.{DB.ConfigFormat}";
             if (!File.Exists(path))
             {
-                if (!Directory.Exists(appdataPath + @"\SystemMonitoring\"))
-                    Directory.CreateDirectory(appdataPath + @"\SystemMonitoring\");
+                if (!Directory.Exists($@"{appdataPath}\{DB.DirectoryName}\")) Directory.CreateDirectory($@"{appdataPath}\{DB.DirectoryName}\");
                 File.Create(path).Dispose();
-                using (StreamWriter writer = new StreamWriter(path))
-                {
-                    for (int i = 0; i <= 3; i++) writer.WriteLine();
-                }
+                Settings settings = new Settings();
+                File.WriteAllText(path, JsonConvert.SerializeObject(settings));
             }
-            string config = appdataPath + @"\SystemMonitoring\config.txt";
-            return config;
+            return $@"{appdataPath}\{DB.DirectoryName}\{DB.ConfigName}.{DB.ConfigFormat}";
         }
+        public static Settings GetSettings() { return JsonConvert.DeserializeObject<Settings>(File.ReadAllText(GetPathConfig())); }
+        public static void SetSettings(Settings settings) { File.WriteAllText(GetPathConfig(), JsonConvert.SerializeObject(settings)); }
     }
 }

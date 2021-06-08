@@ -13,11 +13,11 @@ namespace SystemMonitoring
         {
             db = new MySqlConnectionStringBuilder
             {
-                Server = DataBank.Host,
-                Database = DataBank.Db,
-                UserID = DataBank.User,
-                Password = DataBank.Password,
-                Port = DataBank.Port,
+                Server = DB.Host,
+                Database = DB.Db,
+                UserID = DB.User,
+                Password = DB.Password,
+                Port = DB.Port,
                 CharacterSet = "utf8"
             };
             conn = new MySqlConnection(db.ConnectionString);

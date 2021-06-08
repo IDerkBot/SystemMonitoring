@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbMonitoringModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Culture">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ph" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Phosphor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Potassium" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Magnesium" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Calcium" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Humidity" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Nitrogen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Temperature" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Field">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="District" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Access" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="dbMonitoringEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cultures" EntityType="Self.Culture" />
+    <EntitySet Name="Fields" EntityType="Self.Field" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+  </EntityContainer>
+</Schema>

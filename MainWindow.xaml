@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Name="MainW"
-        Title="System Monitoring" WindowState="Maximized" SizeChanged="ChangedSizeWindow">
+        Title="System Monitoring"
+        WindowState="Maximized"
+        SizeChanged="ChangedSizeWindow">
     <Grid>
-        <Frame NavigationUIVisibility="Hidden" Name="MainPage" ContentRendered="MainPage_ContentRendered"/>
+        <Button Style="{StaticResource BtnBack}"
+                x:Name="Back" Visibility="Hidden"/>
+        <Frame NavigationUIVisibility="Hidden"
+               Name="MainPage" ContentRendered="MainPage_ContentRendered"
+               HorizontalAlignment="Center" VerticalAlignment="Top"/>
     </Grid>
 </Window>

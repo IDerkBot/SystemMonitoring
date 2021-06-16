@@ -17,7 +17,7 @@ namespace SystemMonitoring
                 Settings settings = new Settings();
                 File.WriteAllText(path, JsonConvert.SerializeObject(settings));
             }
-            return $@"{appdataPath}\{DB.DirectoryName}\{DB.ConfigName}.{DB.ConfigFormat}";
+            return path;
         }
         public static Settings GetSettings() { return JsonConvert.DeserializeObject<Settings>(File.ReadAllText(GetPathConfig())); }
         public static void SetSettings(Settings settings) { File.WriteAllText(GetPathConfig(), JsonConvert.SerializeObject(settings)); }

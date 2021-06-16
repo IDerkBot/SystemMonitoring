@@ -12,20 +12,15 @@ namespace SystemMonitoring
     using System;
     using System.Collections.Generic;
     
-    public partial class Field
+    public partial class Seeding
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Field()
-        {
-            this.Seedings = new HashSet<Seeding>();
-        }
-    
         public int Id { get; set; }
-        public string District { get; set; }
-        public string Number { get; set; }
-        public string Position { get; set; }
+        public Nullable<int> IdField { get; set; }
+        public Nullable<int> IdCulture { get; set; }
+        public string Status { get; set; }
+        public string Date { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Seeding> Seedings { get; set; }
+        public virtual Culture Culture { get; set; }
+        public virtual Field Field { get; set; }
     }
 }

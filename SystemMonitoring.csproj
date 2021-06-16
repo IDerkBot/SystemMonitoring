@@ -136,9 +136,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AdminEditPages\AddSensor.xaml.cs">
+      <DependentUpon>AddSensor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AuthReg\Reg.xaml.cs">
       <DependentUpon>Reg.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Classes\FieldData.cs" />
     <Compile Include="ColorFlat.cs" />
     <Compile Include="Culture.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
@@ -177,11 +181,21 @@
     <Compile Include="AdminPages\Users.xaml.cs">
       <DependentUpon>Users.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sensor.cs" />
-    <Compile Include="Settings.cs" />
+    <Compile Include="Classes\Sensor.cs" />
+    <Compile Include="Classes\Settings.cs" />
+    <Compile Include="Seeding.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SensorDetails.xaml.cs">
+      <DependentUpon>SensorDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Page Include="AdminEditPages\AddSensor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AuthReg\Auth.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -214,7 +228,6 @@
       <DependentUpon>Auth.xaml</DependentUpon>
     </Compile>
     <Compile Include="DB.cs" />
-    <Compile Include="Database.cs" />
     <Compile Include="AdminPages\FieldMonitoring.xaml.cs">
       <DependentUpon>FieldMonitoring.xaml</DependentUpon>
     </Compile>
@@ -242,6 +255,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdminPages\Users.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SensorDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

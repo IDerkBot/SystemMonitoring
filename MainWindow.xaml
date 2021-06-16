@@ -7,7 +7,8 @@
         Name="MainW"
         Title="System Monitoring"
         WindowState="Maximized"
-        SizeChanged="ChangedSizeWindow">
+        SizeChanged="ChangedSizeWindow"
+        Closed="MainW_Closed">
     <Grid>
         <Button Style="{StaticResource BtnBack}"
                 x:Name="Back" Visibility="Hidden"/>

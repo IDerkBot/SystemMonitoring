@@ -24,6 +24,16 @@
     <Property Name="Number" Type="varchar(max)" />
     <Property Name="Position" Type="varchar(max)" />
   </EntityType>
+  <EntityType Name="Seeding">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="IdField" Type="int" />
+    <Property Name="IdCulture" Type="int" />
+    <Property Name="Status" Type="varchar(max)" />
+    <Property Name="Date" Type="varchar(max)" />
+  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="Id" />
@@ -33,9 +43,42 @@
     <Property Name="Password" Type="varchar(max)" />
     <Property Name="Access" Type="int" />
   </EntityType>
+  <Association Name="FK_Seeding_Field">
+    <End Role="Field" Type="Self.Field" Multiplicity="0..1" />
+    <End Role="Seeding" Type="Self.Seeding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Field">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Seeding">
+        <PropertyRef Name="IdField" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Seeding_Table_1">
+    <End Role="Culture" Type="Self.Culture" Multiplicity="0..1" />
+    <End Role="Seeding" Type="Self.Seeding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Culture">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Seeding">
+        <PropertyRef Name="IdCulture" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="Хранилище dbMonitoringModelContainer">
     <EntitySet Name="Culture" EntityType="Self.Culture" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Field" EntityType="Self.Field" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Seeding" EntityType="Self.Seeding" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Seeding_Field" Association="Self.FK_Seeding_Field">
+      <End Role="Field" EntitySet="Field" />
+      <End Role="Seeding" EntitySet="Seeding" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Seeding_Table_1" Association="Self.FK_Seeding_Table_1">
+      <End Role="Culture" EntitySet="Culture" />
+      <End Role="Seeding" EntitySet="Seeding" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

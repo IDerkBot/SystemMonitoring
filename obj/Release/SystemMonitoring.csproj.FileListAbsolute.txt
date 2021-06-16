@@ -84,3 +84,9 @@ D:\Coding\Code\C#\SystemMonitoring\obj\Release\AdminPages\Users.baml
 D:\Coding\Code\C#\SystemMonitoring\bin\Release\Newtonsoft.Json.dll
 D:\Coding\Code\C#\SystemMonitoring\bin\Release\Newtonsoft.Json.xml
 D:\Coding\Code\C#\SystemMonitoring\bin\Release\ru\EntityFramework.SqlServer.resources.dll
+D:\Coding\Code\C#\SystemMonitoring\obj\Release\AdminEditPages\AddSensor.baml
+D:\Coding\Code\C#\SystemMonitoring\obj\Release\AdminEditPages\AddSensor.g.cs
+D:\Coding\Code\C#\SystemMonitoring\obj\Release\SensorDetails.baml
+D:\Coding\Code\C#\SystemMonitoring\obj\Release\SensorDetails.g.cs
+D:\Coding\Code\C#\SystemMonitoring\obj\Release\SystemMonitoring_MarkupCompile.lref
+D:\Coding\Code\C#\SystemMonitoring\obj\Release\GeneratedInternalTypeHelper.g.cs

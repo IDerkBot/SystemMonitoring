@@ -2,10 +2,10 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:systemmonitoring="clr-namespace:SystemMonitoring"
       mc:Ignorable="d" 
-      d:DesignHeight="850" d:DesignWidth="1600"
-      Title="FieldMonitoring" Loaded="Page_Loaded">
+      d:DesignHeight="850" Width="1600"
+      Title="FieldMonitoring">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -14,43 +14,63 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="350*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" VerticalAlignment="Center" Orientation="Horizontal" Margin="60,0,0,0">
             <Label Content="Район:" Style="{StaticResource Value}" Padding="5,0"/>
-            <Label x:Name="District" Style="{StaticResource Value}" Content="{Binding District}" Padding="5,0"/>
+            <Label x:Name="District" Style="{StaticResource Value}" Content="{Binding Field.District}" Padding="5,0"/>
         </StackPanel>
         <StackPanel Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal" Margin="60,0,0,0">
             <Label Content="Поле:" Style="{StaticResource Value}" Padding="5,0"/>
-            <Label x:Name="Number" Style="{StaticResource Value}" Content="{Binding Number}" Padding="5,0"/>
+            <Label x:Name="Number" Style="{StaticResource Value}" Content="{Binding Field.Number}" Padding="5,0"/>
         </StackPanel>
         <StackPanel Grid.Row="2" VerticalAlignment="Center" Orientation="Horizontal" Margin="10,0,0,0">
             <Label Content="Культура:" Style="{StaticResource Value}" Padding="5,0"/>
-            <Label x:Name="Culture" Style="{StaticResource Value}" Padding="5,0"/>
+            <Label x:Name="Culture" Style="{StaticResource Value}" Content="{Binding Culture.Name}" Padding="5,0"/>
         </StackPanel>
         <StackPanel Grid.Row="3" VerticalAlignment="Center" Orientation="Horizontal" Margin="10,0,0,0">
             <Label Content="Статус:" Style="{StaticResource Value}" Padding="5,0"/>
-            <Label x:Name="Status" Style="{StaticResource Value}" Padding="5,0"/>
+            <Label x:Name="Status" Style="{StaticResource Value}" Content="{Binding Status}" Padding="5,0"/>
         </StackPanel>
         <StackPanel Grid.Row="4" VerticalAlignment="Center" Orientation="Horizontal" Margin="10,0,0,0">
             <Label Content="Дата посева:" Style="{StaticResource Value}" Padding="5,0"/>
-            <Label x:Name="Date" Style="{StaticResource Value}" Padding="5,0"/>
+            <Label x:Name="Date" Style="{StaticResource Value}" Content="{Binding Date}" Padding="5,0"/>
         </StackPanel>
-        <Button Template="{StaticResource Refresh}" Grid.Row="5" HorizontalAlignment="Left" Click="Button_Click" Margin="10,0,0,0" Foreground="AntiqueWhite" Width="25" Height="25" Padding="0">
-            <Path Width="20" Height="20" Stretch="Fill" Fill="AliceBlue" Data="M500.33 0h-47.41a12 12 0 0 0-12 12.57l4 82.76A247.42 247.42 0 0 0 256 8C119.34 8 7.9 119.53 8 256.19 8.1 393.07 119.1 504 256 504a247.1 247.1 0 0 0 166.18-63.91 12 12 0 0 0 .48-17.43l-34-34a12 12 0 0 0-16.38-.55A176 176 0 1 1 402.1 157.8l-101.53-4.87a12 12 0 0 0-12.57 12v47.41a12 12 0 0 0 12 12h200.33a12 12 0 0 0 12-12V12a12 12 0 0 0-12-12z"></Path>
-            
-        </Button>
-        <Border BorderThickness="0" CornerRadius="20" Grid.Row="6" Background="#dfdfdf" Height="auto" Margin="10">
-            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+        <StackPanel Grid.Row="5" Orientation="Horizontal" Margin="10,0" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <Button Style="{StaticResource Refresh}" x:Name="Refresh" Click="Refresh_Click" Margin="0,0,10,0"/>
+            <Button Style="{StaticResource Add}" x:Name="Add" Click="Add_Click" Margin="0,0,10,0"/>
+            <CheckBox x:Name="toggle" Style="{StaticResource Toggle}" Click="Add_Click"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="6" Margin="10,0" VerticalAlignment="Center">
+            <TextBlock Text="ID" Width="50" TextAlignment="Center"/>
+            <Rectangle Width="1"/>
+            <TextBlock Text="Влажность" Width="65" TextAlignment="Center"/>
+            <Rectangle Width="1"/>
+            <TextBlock Text="Температура" Width="85" TextAlignment="Center"/>
+            <Rectangle Width="1"/>
+            <TextBlock Text="Кислотность" Width="80" TextAlignment="Center"/>
+            <Rectangle Width="1"/>
+            <TextBlock Text="Фосфор" Width="60" TextAlignment="Center"/>
+            <Rectangle Width="1"/>
+            <TextBlock Text="Кальций" Width="60" TextAlignment="Center"/>
+            <Rectangle Width="1"/>
+            <TextBlock Text="Магний" Width="60" TextAlignment="Center"/>
+            <Rectangle Width="1"/>
+            <TextBlock Text="Калий" Width="50" TextAlignment="Center"/>
+            <Rectangle Width="1"/>
+            <TextBlock Text="Азот" Width="50" TextAlignment="Center"/>
+            <Rectangle Width="1"/>
+            <TextBlock Text="Рекомендации" Width="300" TextAlignment="Center"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="6" Margin="10,0">
+            <TextBlock Text="Датчиков обнаружено: "/>
+            <TextBlock Text="0" x:Name="Count"/>
+        </StackPanel>
+        <Border BorderThickness="0" CornerRadius="10" Grid.Row="7" Background="#dfdfdf" Height="auto" Margin="10,3">
+            <ScrollViewer VerticalScrollBarVisibility="Hidden" Padding="0,5">
                 <StackPanel x:Name="Sensors">
-                    <StackPanel x:Name="Sensor" Margin="10,5" Orientation="Horizontal">
-                        <TextBlock x:Name="ID" Text="001" Height="20" FontSize="14"/>
-                        <Border BorderThickness="1" BorderBrush="AliceBlue" CornerRadius="1" Margin="10,0"/>
-                        <TextBlock x:Name="Humidity" Text="0.00" Height="20" FontSize="14"/>
-                        <Border BorderThickness="1" BorderBrush="AliceBlue" CornerRadius="1" Margin="10,0"/>
-                        <TextBlock x:Name="Temperature" Text="31.25" Height="20" FontSize="14"/>
-                    </StackPanel>
-                    <Label x:Name="lblPortData" FontSize="48" HorizontalAlignment="Center" Margin="0,20,0,0">No data</Label>
+                    <systemmonitoring:SensorDetails ID="1" Acidity="1" Humidity="1" Temperature="37" Phosphorus="3,2"/>
                 </StackPanel>
             </ScrollViewer>
         </Border>

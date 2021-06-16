@@ -4,10 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6cd178b515e54fd3b8d6dac949db2b37" Name="Diagram1">
-        <EntityTypeShape EntityType="dbMonitoringModel.Culture" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbMonitoringModel.Field" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbMonitoringModel.User" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+      <Diagram DiagramId="6cd178b515e54fd3b8d6dac949db2b37" Name="Diagram1" ZoomLevel="121">
+        <EntityTypeShape EntityType="dbMonitoringModel.Culture" Width="1.5" PointX="2" PointY="0.75" />
+        <EntityTypeShape EntityType="dbMonitoringModel.Field" Width="1.5" PointX="2" PointY="4" />
+        <EntityTypeShape EntityType="dbMonitoringModel.Seeding" Width="1.5" PointX="4.25" PointY="2.875" />
+        <EntityTypeShape EntityType="dbMonitoringModel.User" Width="1.5" PointX="4.25" PointY="0.75" />
+        <AssociationConnector Association="dbMonitoringModel.FK_Seeding_Table_1" />
+        <AssociationConnector Association="dbMonitoringModel.FK_Seeding_Field" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="SystemMonitoring.SensorDetails"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+             Height="20" Width="831"
+             x:Name="SensorDetail"
+             HorizontalAlignment="Left">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="65"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="85"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="{Binding ID, FallbackValue=ID}" Name="SensorID" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0"/>
+        <TextBlock Text="{Binding Humidity, FallbackValue=Humidity}" Name="SensorHum" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2"/>
+        <TextBlock Text="{Binding Temperature, FallbackValue=Temperature}" Name="SensorTemp" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="4"/>
+        <TextBlock Text="{Binding Acidity, FallbackValue=Acidity}" Name="SensorAcid" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="6"/>
+        <TextBlock Text="{Binding Phosphorus, FallbackValue=Phosphorus}" Name="SensorPhos" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="8"/>
+        <TextBlock Text="{Binding Calcium, FallbackValue=Calcium}" Name="SensorCalc" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="10"/>
+        <TextBlock Text="{Binding Magniy, FallbackValue=Magniy}" Name="SensorMagn" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="12"/>
+        <TextBlock Text="{Binding Calium, FallbackValue=Calium}" Name="SensorCalm" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="14"/>
+        <TextBlock Text="{Binding Asot, FallbackValue=Asot}" Name="SensorAsot" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="16"/>
+        <TextBlock Text="{Binding Recomendation, FallbackValue=Recomendation}" Name="SensorRecom" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="18"/>
+        <Button Width="20" Height="20" Grid.Column="20" x:Name="BtnEdit" Style="{StaticResource BtnEdit}" Click="Edit_Click"/>
+    </Grid>
+</UserControl>

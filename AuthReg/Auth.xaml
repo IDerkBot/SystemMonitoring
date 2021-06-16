@@ -31,6 +31,6 @@
         <PasswordBox Name="PasswordPB" Grid.Row="4" FontSize="16"/>
         <CheckBox Name="RememberCB" Grid.Row="5" Content="Запомнить" Height="15"/>
         <Button Name="LogInBtn" Grid.Row="6" Content="Войти" Click="LogInBtn_Click"/>
-        <Button Name="RegInBtn" Grid.Row="7" Content="Регистрация" Click="RegInBtn_Click"/>
+        <Button Name="RegInBtn" Grid.Row="7" Content="Регистрация" Click="RegInBtn_Click" Background="Transparent"/>
     </Grid>
 </Page>

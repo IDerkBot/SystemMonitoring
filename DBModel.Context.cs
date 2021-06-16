@@ -35,5 +35,6 @@ namespace SystemMonitoring
         public virtual DbSet<Field> Fields { get; set; }
         public virtual DbSet<Seeding> Seedings { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Fertilizer> Fertilizers { get; set; }
     }
 }

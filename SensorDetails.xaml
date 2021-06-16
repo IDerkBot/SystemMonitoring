@@ -4,7 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" 
-             Height="20" Width="831"
+             Height="20" Width="890"
              x:Name="SensorDetail"
              HorizontalAlignment="Left">
     <Grid>

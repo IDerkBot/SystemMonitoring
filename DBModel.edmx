@@ -20,6 +20,23 @@
           <Property Name="Nitrogen" Type="varchar(max)" />
           <Property Name="Temperature" Type="varchar(max)" />
         </EntityType>
+        <EntityType Name="Fertilizer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Asot" Type="varchar(max)" />
+          <Property Name="PhosphorusOxide" Type="varchar(max)" />
+          <Property Name="PotassiumOxide" Type="varchar(max)" />
+          <Property Name="CalciumOxide" Type="varchar(max)" />
+          <Property Name="MagnesiumOxide" Type="varchar(max)" />
+          <Property Name="SulfurOxide" Type="varchar(max)" />
+          <Property Name="Borum" Type="varchar(max)" />
+          <Property Name="Natrium" Type="varchar(max)" />
+          <Property Name="Zincum" Type="varchar(max)" />
+          <Property Name="Cuprum" Type="varchar(max)" />
+          <Property Name="Manganum" Type="varchar(max)" />
+        </EntityType>
         <EntityType Name="Field">
           <Key>
             <PropertyRef Name="Id" />
@@ -74,6 +91,7 @@
         </Association>
         <EntityContainer Name="Хранилище dbMonitoringModelContainer">
           <EntitySet Name="Culture" EntityType="Self.Culture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fertilizer" EntityType="Self.Fertilizer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Field" EntityType="Self.Field" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Seeding" EntityType="Self.Seeding" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
@@ -90,20 +108,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbMonitoringModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="dbMonitoringEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Cultures" EntityType="dbMonitoringModel.Culture" />
-          <EntitySet Name="Fields" EntityType="dbMonitoringModel.Field" />
-          <EntitySet Name="Seedings" EntityType="dbMonitoringModel.Seeding" />
-          <EntitySet Name="Users" EntityType="dbMonitoringModel.User" />
-          <AssociationSet Name="FK_Seeding_Table_1" Association="dbMonitoringModel.FK_Seeding_Table_1">
-            <End Role="Culture" EntitySet="Cultures" />
-            <End Role="Seeding" EntitySet="Seedings" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Seeding_Field" Association="dbMonitoringModel.FK_Seeding_Field">
-            <End Role="Field" EntitySet="Fields" />
-            <End Role="Seeding" EntitySet="Seedings" />
-          </AssociationSet>
-        </EntityContainer>
         <EntityType Name="Culture">
           <Key>
             <PropertyRef Name="Id" />
@@ -118,7 +122,7 @@
           <Property Name="Humidity" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Nitrogen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Temperature" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Seedings" Relationship="dbMonitoringModel.FK_Seeding_Table_1" FromRole="Culture" ToRole="Seeding" />
+          <NavigationProperty Name="Seedings" Relationship="Self.FK_Seeding_Table_1" FromRole="Culture" ToRole="Seeding" />
         </EntityType>
         <EntityType Name="Field">
           <Key>
@@ -128,7 +132,7 @@
           <Property Name="District" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Seedings" Relationship="dbMonitoringModel.FK_Seeding_Field" FromRole="Field" ToRole="Seeding" />
+          <NavigationProperty Name="Seedings" Relationship="Self.FK_Seeding_Field" FromRole="Field" ToRole="Seeding" />
         </EntityType>
         <EntityType Name="Seeding">
           <Key>
@@ -139,8 +143,8 @@
           <Property Name="IdCulture" Type="Int32" />
           <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Culture" Relationship="dbMonitoringModel.FK_Seeding_Table_1" FromRole="Seeding" ToRole="Culture" />
-          <NavigationProperty Name="Field" Relationship="dbMonitoringModel.FK_Seeding_Field" FromRole="Seeding" ToRole="Field" />
+          <NavigationProperty Name="Culture" Relationship="Self.FK_Seeding_Table_1" FromRole="Seeding" ToRole="Culture" />
+          <NavigationProperty Name="Field" Relationship="Self.FK_Seeding_Field" FromRole="Seeding" ToRole="Field" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -152,8 +156,8 @@
           <Property Name="Access" Type="Int32" />
         </EntityType>
         <Association Name="FK_Seeding_Table_1">
-          <End Type="dbMonitoringModel.Culture" Role="Culture" Multiplicity="0..1" />
-          <End Type="dbMonitoringModel.Seeding" Role="Seeding" Multiplicity="*" />
+          <End Role="Culture" Type="Self.Culture" Multiplicity="0..1" />
+          <End Role="Seeding" Type="Self.Seeding" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Culture">
               <PropertyRef Name="Id" />
@@ -164,8 +168,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Seeding_Field">
-          <End Type="dbMonitoringModel.Field" Role="Field" Multiplicity="0..1" />
-          <End Type="dbMonitoringModel.Seeding" Role="Seeding" Multiplicity="*" />
+          <End Role="Field" Type="Self.Field" Multiplicity="0..1" />
+          <End Role="Seeding" Type="Self.Seeding" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Field">
               <PropertyRef Name="Id" />
@@ -175,6 +179,38 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="dbMonitoringEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cultures" EntityType="Self.Culture" />
+          <EntitySet Name="Fields" EntityType="Self.Field" />
+          <EntitySet Name="Seedings" EntityType="Self.Seeding" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_Seeding_Table_1" Association="Self.FK_Seeding_Table_1">
+            <End Role="Culture" EntitySet="Cultures" />
+            <End Role="Seeding" EntitySet="Seedings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seeding_Field" Association="Self.FK_Seeding_Field">
+            <End Role="Field" EntitySet="Fields" />
+            <End Role="Seeding" EntitySet="Seedings" />
+          </AssociationSet>
+          <EntitySet Name="Fertilizers" EntityType="dbMonitoringModel.Fertilizer" />
+        </EntityContainer>
+        <EntityType Name="Fertilizer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Asot" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PhosphorusOxide" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PotassiumOxide" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CalciumOxide" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MagnesiumOxide" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SulfurOxide" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Borum" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Natrium" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Zincum" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Cuprum" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Manganum" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -184,47 +220,65 @@
           <EntitySetMapping Name="Cultures">
             <EntityTypeMapping TypeName="dbMonitoringModel.Culture">
               <MappingFragment StoreEntitySet="Culture">
-                <ScalarProperty Name="Temperature" ColumnName="Temperature" />
-                <ScalarProperty Name="Nitrogen" ColumnName="Nitrogen" />
-                <ScalarProperty Name="Humidity" ColumnName="Humidity" />
-                <ScalarProperty Name="Calcium" ColumnName="Calcium" />
-                <ScalarProperty Name="Magnesium" ColumnName="Magnesium" />
-                <ScalarProperty Name="Potassium" ColumnName="Potassium" />
-                <ScalarProperty Name="Phosphor" ColumnName="Phosphor" />
-                <ScalarProperty Name="Ph" ColumnName="Ph" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Ph" ColumnName="Ph" />
+                <ScalarProperty Name="Phosphor" ColumnName="Phosphor" />
+                <ScalarProperty Name="Potassium" ColumnName="Potassium" />
+                <ScalarProperty Name="Magnesium" ColumnName="Magnesium" />
+                <ScalarProperty Name="Calcium" ColumnName="Calcium" />
+                <ScalarProperty Name="Humidity" ColumnName="Humidity" />
+                <ScalarProperty Name="Nitrogen" ColumnName="Nitrogen" />
+                <ScalarProperty Name="Temperature" ColumnName="Temperature" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Fields">
             <EntityTypeMapping TypeName="dbMonitoringModel.Field">
               <MappingFragment StoreEntitySet="Field">
-                <ScalarProperty Name="Position" ColumnName="Position" />
-                <ScalarProperty Name="Number" ColumnName="Number" />
-                <ScalarProperty Name="District" ColumnName="District" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Seedings">
             <EntityTypeMapping TypeName="dbMonitoringModel.Seeding">
               <MappingFragment StoreEntitySet="Seeding">
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="IdCulture" ColumnName="IdCulture" />
-                <ScalarProperty Name="IdField" ColumnName="IdField" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdField" ColumnName="IdField" />
+                <ScalarProperty Name="IdCulture" ColumnName="IdCulture" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="dbMonitoringModel.User">
               <MappingFragment StoreEntitySet="User">
-                <ScalarProperty Name="Access" ColumnName="Access" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Access" ColumnName="Access" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fertilizers">
+            <EntityTypeMapping TypeName="dbMonitoringModel.Fertilizer">
+              <MappingFragment StoreEntitySet="Fertilizer">
+                <ScalarProperty Name="Manganum" ColumnName="Manganum" />
+                <ScalarProperty Name="Cuprum" ColumnName="Cuprum" />
+                <ScalarProperty Name="Zincum" ColumnName="Zincum" />
+                <ScalarProperty Name="Natrium" ColumnName="Natrium" />
+                <ScalarProperty Name="Borum" ColumnName="Borum" />
+                <ScalarProperty Name="SulfurOxide" ColumnName="SulfurOxide" />
+                <ScalarProperty Name="MagnesiumOxide" ColumnName="MagnesiumOxide" />
+                <ScalarProperty Name="CalciumOxide" ColumnName="CalciumOxide" />
+                <ScalarProperty Name="PotassiumOxide" ColumnName="PotassiumOxide" />
+                <ScalarProperty Name="PhosphorusOxide" ColumnName="PhosphorusOxide" />
+                <ScalarProperty Name="Asot" ColumnName="Asot" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

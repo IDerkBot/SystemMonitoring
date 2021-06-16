@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Windows.Controls;
 
 namespace SystemMonitoring
 {
@@ -13,6 +12,5 @@ namespace SystemMonitoring
         public static string DirectoryName { get; set; } = "SystemMonitoring";
         public static Seeding SelectSeeding { get; set; }
         public static List<SensorDetails> Childs { get; set; }
-        //public static UIElementCollection Childs { get; set; }
     }
 }

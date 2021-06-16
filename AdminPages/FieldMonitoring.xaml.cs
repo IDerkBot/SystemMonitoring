@@ -179,7 +179,7 @@ namespace SystemMonitoring
             //await Task.Run(() => UploadSensor());
             //DataContext = _selectedSeeding;
             //foreach (SensorDetails child in DB.Childs) { AddSensor(child); }
-
         }
+        void Map_Click(object sender, RoutedEventArgs e) { ManagerPage.Page.Navigate(new Map()); }
     }
 }

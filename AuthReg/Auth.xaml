@@ -6,7 +6,6 @@
       mc:Ignorable="d" 
       d:DesignHeight="400" d:DesignWidth="200"
       Title="Auth" Loaded="Load">
-
     <Grid KeyDown="KeyPress">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -31,6 +30,6 @@
         <PasswordBox Name="PasswordPB" Grid.Row="4" FontSize="16"/>
         <CheckBox Name="RememberCB" Grid.Row="5" Content="Запомнить" Height="15"/>
         <Button Name="LogInBtn" Grid.Row="6" Content="Войти" Click="LogInBtn_Click"/>
-        <Button Name="RegInBtn" Grid.Row="7" Content="Регистрация" Click="RegInBtn_Click" Background="Transparent"/>
+        <Button Name="RegInBtn" Grid.Row="7" Content="Регистрация" Click="RegInBtn_Click"/>
     </Grid>
 </Page>

@@ -4,14 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6d21f94e19454c9fb974d35cbfae38da" Name="Diagram1" ZoomLevel="131">
+      <Diagram DiagramId="0cf00ac1140c4335b2a8c7f4a2c994bd" Name="Diagram1">
         <EntityTypeShape EntityType="dbMonitoringModel.Culture" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbMonitoringModel.Field" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbMonitoringModel.Seeding" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbMonitoringModel.User" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbMonitoringModel.Fertilizer" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbMonitoringModel.Field" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbMonitoringModel.Seeding" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbMonitoringModel.sysdiagram" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbMonitoringModel.User" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="dbMonitoringModel.FK_Seeding_Table_1" ManuallyRouted="false" />
         <AssociationConnector Association="dbMonitoringModel.FK_Seeding_Field" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="dbMonitoringModel.Fertilizer" Width="1.5" PointX="5.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -32,9 +32,10 @@ namespace SystemMonitoring
         }
     
         public virtual DbSet<Culture> Cultures { get; set; }
+        public virtual DbSet<Fertilizer> Fertilizers { get; set; }
         public virtual DbSet<Field> Fields { get; set; }
         public virtual DbSet<Seeding> Seedings { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Fertilizer> Fertilizers { get; set; }
     }
 }

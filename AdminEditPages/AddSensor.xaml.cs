@@ -14,7 +14,7 @@ namespace SystemMonitoring.AdminEditPages
         void Back_Click(object sender, RoutedEventArgs e) { ManagerPage.Page.Navigate(ManagerPage.FieldMonitoringPage); }
         void Add_Click(object sender, RoutedEventArgs e)
         {
-            Sensor sensor = new Sensor
+            DB.Childs.Add(new SensorDetails
             {
                 ID = ID.Text,
                 Humidity = Humidity.Text,
@@ -24,19 +24,7 @@ namespace SystemMonitoring.AdminEditPages
                 Calcium = Calcium.Text,
                 Calium = Calium.Text,
                 Magniy = Magniy.Text,
-                Phosphorus = Phosphorus.Text,
-            };
-            DB.Childs.Add(new SensorDetails
-            {
-                ID = sensor.ID,
-                Humidity = sensor.Humidity,
-                Temperature = sensor.Temperature,
-                Acidity = sensor.Acidity,
-                Asot = sensor.Asot,
-                Calcium = sensor.Calcium,
-                Calium = sensor.Calium,
-                Magniy = sensor.Magniy,
-                Phosphorus = sensor.Phosphorus
+                Phosphorus = Phosphorus.Text
             });
             ManagerPage.Page.Navigate(ManagerPage.FieldMonitoringPage);
         }

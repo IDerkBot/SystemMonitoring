@@ -14,71 +14,65 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="20"/>
             <RowDefinition Height="350*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" VerticalAlignment="Center" Orientation="Horizontal" Margin="60,0,0,0">
+        <StackPanel Grid.Row="0" Width="300" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" Margin="60,0,0,0">
             <Label Content="Район:" Style="{StaticResource Value}" Padding="5,0"/>
             <Label x:Name="District" Style="{StaticResource Value}" Content="{Binding Field.District}" Padding="5,0"/>
         </StackPanel>
-        <StackPanel Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal" Margin="60,0,0,0">
+        <StackPanel Grid.Row="1" Width="300" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" Margin="60,0,0,0">
             <Label Content="Поле:" Style="{StaticResource Value}" Padding="5,0"/>
             <Label x:Name="Number" Style="{StaticResource Value}" Content="{Binding Field.Number}" Padding="5,0"/>
         </StackPanel>
-        <StackPanel Grid.Row="2" VerticalAlignment="Center" Orientation="Horizontal" Margin="10,0,0,0">
+        <StackPanel Grid.Row="2" Width="300" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" Margin="10,0,0,0">
             <Label Content="Культура:" Style="{StaticResource Value}" Padding="5,0"/>
-            <Label x:Name="Culture" Style="{StaticResource Value}" Content="{Binding Culture.Name}" Padding="5,0"/>
+            <ComboBox x:Name="Culture" Width="210" Padding="5,0"/>
         </StackPanel>
-        <StackPanel Grid.Row="3" VerticalAlignment="Center" Orientation="Horizontal" Margin="10,0,0,0">
+        <StackPanel Grid.Row="3" Width="300" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" Margin="10,0,0,0">
             <Label Content="Статус:" Style="{StaticResource Value}" Padding="5,0"/>
-            <Label x:Name="Status" Style="{StaticResource Value}" Content="{Binding Status}" Padding="5,0"/>
+            <Label x:Name="Status" Style="{StaticResource Value}" Padding="5,0"/>
         </StackPanel>
-        <StackPanel Grid.Row="4" VerticalAlignment="Center" Orientation="Horizontal" Margin="10,0,0,0">
+        <StackPanel Grid.Row="4" Width="300" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" Margin="10,0,0,0">
             <Label Content="Дата посева:" Style="{StaticResource Value}" Padding="5,0"/>
             <Label x:Name="Date" Style="{StaticResource Value}" Content="{Binding Date}" Padding="5,0"/>
         </StackPanel>
+        <StackPanel Grid.Row="5" Width="300" HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal" Margin="10,0,0,0">
+            <Label Content="Тип почвы:" Style="{StaticResource Value}" Padding="5,0"/>
+            <ComboBox x:Name="Soil" Width="198" Padding="5,0"/>
+        </StackPanel>
 
-        <Grid Grid.RowSpan="2" Width="60" HorizontalAlignment="Left" Margin="300,0,0,0">
+        <StackPanel Grid.RowSpan="2" Width="120" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0">
             <Button x:Name="Map" Style="{StaticResource BtnMap}" Click="Map_Click"/>
-        </Grid>
+            <Button x:Name="SaveToExcel" Style="{StaticResource BtnExcel}" Click="SaveToExcel_Click"/>
+        </StackPanel>
 
-
-        <StackPanel Grid.Row="5" Orientation="Horizontal" Margin="10,0" VerticalAlignment="Center" HorizontalAlignment="Left">
+        <StackPanel Grid.Row="6" Orientation="Horizontal" Margin="10,0" VerticalAlignment="Center" HorizontalAlignment="Left">
             <Button Style="{StaticResource Refresh}" x:Name="Refresh" Click="Refresh_Click" Margin="0,0,10,0"/>
             <Button Style="{StaticResource Add}" x:Name="Add" Click="Add_Click" Margin="0,0,10,0"/>
-            <CheckBox x:Name="toggle" Style="{StaticResource Toggle}" Click="Add_Click"/>
+            <Button Style="{StaticResource Add}" x:Name="Write" Click="Write_Click" Margin="0,0,10,0"/>
+            <!--<CheckBox x:Name="toggle" Style="{StaticResource Toggle}" Click="Add_Click"/>-->
         </StackPanel>
         
-        <StackPanel Orientation="Horizontal" Grid.Row="6" Margin="10,0" VerticalAlignment="Center">
-            <TextBlock Text="ID" Width="50" TextAlignment="Center"/>
-            <Rectangle Width="1"/>
-            <TextBlock Text="Влажность" Width="65" TextAlignment="Center"/>
-            <Rectangle Width="1"/>
-            <TextBlock Text="Температура" Width="85" TextAlignment="Center"/>
-            <Rectangle Width="1"/>
-            <TextBlock Text="Кислотность" Width="80" TextAlignment="Center"/>
-            <Rectangle Width="1"/>
-            <TextBlock Text="Фосфор" Width="60" TextAlignment="Center"/>
-            <Rectangle Width="1"/>
-            <TextBlock Text="Кальций" Width="60" TextAlignment="Center"/>
-            <Rectangle Width="1"/>
-            <TextBlock Text="Магний" Width="60" TextAlignment="Center"/>
-            <Rectangle Width="1"/>
-            <TextBlock Text="Калий" Width="50" TextAlignment="Center"/>
-            <Rectangle Width="1"/>
-            <TextBlock Text="Азот" Width="50" TextAlignment="Center"/>
-            <Rectangle Width="1"/>
-            <TextBlock Text="Рекомендации" Width="300" TextAlignment="Center"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="7" Margin="10,0" VerticalAlignment="Center">
+            <TextBlock Text="ID" Width="50" TextAlignment="Center" Margin="0,0,1,0"/>
+            <TextBlock Text="Влажность, %" Width="75" TextAlignment="Center" Margin="0,0,1,0"/>
+            <TextBlock Text="Температура, °C" Width="95" TextAlignment="Center"  Margin="0,0,1,0"/>
+            <TextBlock Text="Кислотность" Width="80" TextAlignment="Center"  Margin="0,0,1,0"/>
+            <TextBlock Text="Фосфор, мг/кг" Width="85" TextAlignment="Center"  Margin="0,0,1,0"/>
+            <TextBlock Text="Кальций, мг/кг" Width="85" TextAlignment="Center"  Margin="0,0,1,0"/>
+            <TextBlock Text="Магний, мг/кг" Width="85" TextAlignment="Center"  Margin="0,0,1,0"/>
+            <TextBlock Text="Калий, мг/кг" Width="70" TextAlignment="Center"  Margin="0,0,1,0"/>
+            <TextBlock Text="Азот, мг/кг" Width="60" TextAlignment="Center"  Margin="0,0,1,0"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="6" Margin="10,0">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="7" Margin="10,0">
             <TextBlock Text="Датчиков обнаружено: "/>
             <TextBlock Text="0" x:Name="Count"/>
         </StackPanel>
-        <Border BorderThickness="0" CornerRadius="10" Grid.Row="7" Background="#dfdfdf" Height="auto" Margin="10,3">
+        <Border BorderThickness="0" CornerRadius="10" Grid.Row="8" Background="#DFDFDF" VerticalAlignment="Top" Height="300" Margin="10,3">
             <ScrollViewer VerticalScrollBarVisibility="Hidden" Padding="0,5">
-                <StackPanel x:Name="Sensors">
-                    <systemmonitoring:SensorDetails ID="1" Acidity="1" Humidity="1" Temperature="37" Phosphorus="3,2"/>
-                </StackPanel>
+                <StackPanel x:Name="Sensors"/>
             </ScrollViewer>
         </Border>
     </Grid>

@@ -89,7 +89,6 @@ D:\Coding\Code\C#\SystemMonitoring\obj\Release\SensorDetails.g.cs
 D:\Coding\Code\C#\SystemMonitoring\obj\Release\SystemMonitoring_MarkupCompile.lref
 D:\Coding\Code\C#\SystemMonitoring\obj\Release\GeneratedInternalTypeHelper.g.cs
 D:\Coding\Code\C#\SystemMonitoring\bin\Release\GMap.NET.Core.dll
-D:\Coding\Code\C#\SystemMonitoring\bin\Release\GMap.NET.WindowsForms.dll
 D:\Coding\Code\C#\SystemMonitoring\bin\Release\GMap.NET.WindowsPresentation.dll
 D:\Coding\Code\C#\SystemMonitoring\bin\Release\System.Data.SqlClient.dll
 D:\Coding\Code\C#\SystemMonitoring\bin\Release\System.Data.SQLite.dll
@@ -101,3 +100,14 @@ D:\Coding\Code\C#\SystemMonitoring\bin\Release\System.Data.SQLite.xml
 D:\Coding\Code\C#\SystemMonitoring\bin\Release\System.Security.Principal.Windows.xml
 D:\Coding\Code\C#\SystemMonitoring\obj\Release\Map.g.cs
 D:\Coding\Code\C#\SystemMonitoring\obj\Release\Map.baml
+D:\Coding\Code\C#\SystemMonitoring\bin\Release\AjaxMin.dll
+D:\Coding\Code\C#\SystemMonitoring\bin\Release\Gmap.net.dll
+D:\Coding\Code\C#\SystemMonitoring\bin\Release\GoogleApi.dll
+D:\Coding\Code\C#\SystemMonitoring\bin\Release\Microsoft.Maps.MapControl.WPF.dll
+D:\Coding\Code\C#\SystemMonitoring\bin\Release\BouncyCastle.Crypto.xml
+D:\Coding\Code\C#\SystemMonitoring\bin\Release\Gmap.net.pdb
+D:\Coding\Code\C#\SystemMonitoring\bin\Release\GoogleApi.xml
+D:\Coding\Code\C#\SystemMonitoring\bin\Release\Microsoft.Maps.MapControl.WPF.xml
+D:\Coding\Code\C#\SystemMonitoring\bin\Release\BingMapsRESTToolkit.dll
+D:\Coding\Code\C#\SystemMonitoring\bin\Release\BingMapsRESTToolkit.pdb
+D:\Coding\Code\C#\SystemMonitoring\bin\Release\BingMapsRESTToolkit.xml

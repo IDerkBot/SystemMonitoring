@@ -155,11 +155,26 @@
         <Style x:Key="BtnMap" TargetType="Button">
             <Setter Property="Width" Value="60"/>
             <Setter Property="Height" Value="60"/>
+            <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate>
                         <Border>
                             <Image Source="/icons/point.png" Stretch="Uniform"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="BtnExcel" TargetType="Button">
+            <Setter Property="Width" Value="60"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border>
+                            <Image Source="/icons/Excel.png" Stretch="Uniform"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>

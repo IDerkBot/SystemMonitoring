@@ -15,6 +15,7 @@ namespace SystemMonitoring
     public partial class Fertilizer
     {
         public int ID { get; set; }
+        public string Name { get; set; }
         public string Asot { get; set; }
         public string PhosphorusOxide { get; set; }
         public string PotassiumOxide { get; set; }
@@ -26,5 +27,9 @@ namespace SystemMonitoring
         public string Zincum { get; set; }
         public string Cuprum { get; set; }
         public string Manganum { get; set; }
+        public string NitrateNitrogen { get; set; }
+        public string AmmoniumNitrogen { get; set; }
+        public string Iron { get; set; }
+        public string Molybdenum { get; set; }
     }
 }

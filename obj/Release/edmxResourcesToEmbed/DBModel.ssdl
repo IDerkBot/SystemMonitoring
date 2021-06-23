@@ -6,6 +6,8 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Status" Type="varchar(max)" />
+    <Property Name="Period" Type="varchar(max)" />
     <Property Name="Ph" Type="varchar(max)" />
     <Property Name="Phosphor" Type="varchar(max)" />
     <Property Name="Potassium" Type="varchar(max)" />
@@ -15,6 +17,28 @@
     <Property Name="Nitrogen" Type="varchar(max)" />
     <Property Name="Temperature" Type="varchar(max)" />
   </EntityType>
+  <EntityType Name="Fertilizer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Asot" Type="varchar(max)" />
+    <Property Name="PhosphorusOxide" Type="varchar(max)" />
+    <Property Name="PotassiumOxide" Type="varchar(max)" />
+    <Property Name="CalciumOxide" Type="varchar(max)" />
+    <Property Name="MagnesiumOxide" Type="varchar(max)" />
+    <Property Name="SulfurOxide" Type="varchar(max)" />
+    <Property Name="Borum" Type="varchar(max)" />
+    <Property Name="Natrium" Type="varchar(max)" />
+    <Property Name="Zincum" Type="varchar(max)" />
+    <Property Name="Cuprum" Type="varchar(max)" />
+    <Property Name="Manganum" Type="varchar(max)" />
+    <Property Name="NitrateNitrogen" Type="varchar(max)" />
+    <Property Name="AmmoniumNitrogen" Type="varchar(max)" />
+    <Property Name="Iron" Type="varchar(max)" />
+    <Property Name="Molybdenum" Type="varchar(max)" />
+  </EntityType>
   <EntityType Name="Field">
     <Key>
       <PropertyRef Name="Id" />
@@ -22,6 +46,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="District" Type="varchar(max)" />
     <Property Name="Number" Type="varchar(max)" />
+    <Property Name="Soil" Type="varchar(max)" />
     <Property Name="Position" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="Seeding">
@@ -33,6 +58,16 @@
     <Property Name="IdCulture" Type="int" />
     <Property Name="Status" Type="varchar(max)" />
     <Property Name="Date" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -69,8 +104,10 @@
   </Association>
   <EntityContainer Name="Хранилище dbMonitoringModelContainer">
     <EntitySet Name="Culture" EntityType="Self.Culture" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fertilizer" EntityType="Self.Fertilizer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Field" EntityType="Self.Field" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Seeding" EntityType="Self.Seeding" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Seeding_Field" Association="Self.FK_Seeding_Field">
       <End Role="Field" EntitySet="Field" />

@@ -56,13 +56,18 @@ namespace SystemMonitoring
         }
         public string Recomendation
         {
-            get { return SensorRecom.Text; }
-            set { SensorRecom.Text = value; }
+            get { return recom; }
+            set { recom = value; }
         }
+        string recom;
         void Edit_Click(object sender, RoutedEventArgs e)
         {
             Sensor sensor = new Sensor { ID = ID, Acidity = Acidity, Asot = Asot, Calcium = Calcium, Calium = Calium, Humidity = Humidity, Magniy = Magniy, Phosphorus = Phosphorus, Temperature = Temperature };
             ManagerPage.Page.Navigate(new AdminEditPages.AddSensor(sensor));
+        }
+        void SensorRecom_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.MessageBox.Show($"{recom}");
         }
     }
 }

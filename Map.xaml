@@ -4,12 +4,17 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SystemMonitoring"
-      xmlns:WindowsPresentation="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation" x:Class="SystemMonitoring.Map"
+      xmlns:map="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+      xmlns:m="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation"
+      xmlns:mp="clr-namespace:GMap.NET.WindowsPresentation;assembly=GMap.NET.WindowsPresentation"
+      xmlns:ma="clr-namespace:BingMapsRESTToolkit;assembly=BingMapsRESTToolkit"
+      x:Class="SystemMonitoring.Map"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Map">
-
     <Grid>
-        <WebBrowser HorizontalAlignment="Left" Height="328" Margin="40,54,0,0" VerticalAlignment="Top" Width="348"/>
+        <map:MapCore Mode="Aerial" ZoomLevel="18" Center="56.326887, 44.005986" Width="500" Heading="500" CredentialsProvider="5tsCRucwDCicCNdCbCnj~kP4iV7VjBisVLQ6xTEw3fQ~AjdeKHlkcZN87AAerX3hFIef0ONcOBvIbq8SWaWFLNEVtVYexOsihMH9i2Zg9_4H">
+        </map:MapCore>
+        
     </Grid>
 </Page>

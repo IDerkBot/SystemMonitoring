@@ -23,6 +23,7 @@ namespace SystemMonitoring
         public int Id { get; set; }
         public string District { get; set; }
         public string Number { get; set; }
+        public string Soil { get; set; }
         public string Position { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

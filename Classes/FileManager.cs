@@ -29,5 +29,12 @@ namespace SystemMonitoring
                 Directory.CreateDirectory($@"{appdataPath}\{DB.DirectoryName}\");
             return path;
         }
+        public static string GetSensorsJson()
+        {
+            string path = $@"{GetAppdata()}\sensors.json";
+            if (!File.Exists(path))
+                File.Create(path).Dispose();
+            return path;
+        }
     }
 }

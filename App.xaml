@@ -3,6 +3,159 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <Style TargetType="Button" x:Key="BtnMenu">
+            <Setter Property="Width" Value="325"/>
+            <Setter Property="Height" Value="325"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+        <Style TargetType="Button" x:Key="BtnMenu.Fields" BasedOn="{StaticResource BtnMenu}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="20">
+                            <Border.Background>
+                                <SolidColorBrush x:Name="BorderColor" Color="#ecf0f1"/>
+                            </Border.Background>
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <!--<Path Fill="Black" Stretch="Uniform" Width="150" Height="150"
+                                      Data="M288 0c-69.59 0-126 56.41-126 126 0 56.26 82.35 158.8 113.9 196.02 6.39 7.54 
+                                      17.82 7.54 24.2 0C331.65 284.8 414 182.26 414 126 414 56.41 357.59 0 288 0zm0 
+                                      168c-23.2 0-42-18.8-42-42s18.8-42 42-42 42 18.8 42 42-18.8 42-42 42zM20.12 
+                                      215.95A32.006 32.006 0 0 0 0 245.66v250.32c0 11.32 11.43 19.06 21.94 14.86L160 
+                                      448V214.92c-8.84-15.98-16.07-31.54-21.25-46.42L20.12 215.95zM288 359.67c-14.07 
+                                      0-27.38-6.18-36.51-16.96-19.66-23.2-40.57-49.62-59.49-76.72v182l192 64V266c-18.92 
+                                      27.09-39.82 53.52-59.49 76.72-9.13 10.77-22.44 16.95-36.51 16.95zm266.06-198.51L416 
+                                      224v288l139.88-55.95A31.996 31.996 0 0 0 576 426.34V176.02c0-11.32-11.43-19.06-21.94-14.86z"/>-->
+                                <Image Source="/icons/Menu/Location.png" Width="150" Height="150"/>
+                                <TextBlock Text="Участки" FontSize="18" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="BorderColor" Storyboard.TargetProperty="Color" To="LightBlue"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState Name="Normal">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="BorderColor" Storyboard.TargetProperty="Color" To="#ecf0f1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="BtnMenu.Reports" BasedOn="{StaticResource BtnMenu}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="20">
+                            <Border.Background>
+                                <SolidColorBrush x:Name="BorderColor" Color="#ecf0f1"/>
+                            </Border.Background>
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <!--<Path Fill="Black" Stretch="Uniform" Width="150" Height="150"
+                                      Data="M384 112v352c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112c0-26.51 
+                                      21.49-48 48-48h80c0-35.29 28.71-64 64-64s64 28.71 64 64h80c26.51 0 48 21.49 48 48zM192 
+                                      40c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24m96 
+                                      114v-20a6 6 0 0 0-6-6H102a6 6 0 0 0-6 6v20a6 6 0 0 0 6 6h180a6 6 0 0 0 6-6z"/>-->
+                                <Image Source="/icons/Menu/Notes.png" Width="150" Height="150"/>
+                                <TextBlock Text="Отчёты" FontSize="18" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="BorderColor" Storyboard.TargetProperty="Color" To="LightBlue"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState Name="Normal">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="BorderColor" Storyboard.TargetProperty="Color" To="#ecf0f1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="BtnMenu.Base" BasedOn="{StaticResource BtnMenu}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="20">
+                            <Border.Background>
+                                <SolidColorBrush x:Name="BorderColor" Color="#ecf0f1"/>
+                            </Border.Background>
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <!--<Path Fill="Black" Stretch="Uniform" Width="150" Height="150"
+                                      Data="M64 96H0c0 123.7 100.3 224 224 224v144c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 
+                                      16-16V320C288 196.3 187.7 96 64 96zm384-64c-84.2 0-157.4 46.5-195.7 115.2 27.7 
+                                      30.2 48.2 66.9 59 107.6C424 243.1 512 147.9 512 32h-64z"/>-->
+                                <Image Source="/icons/Menu/Notepad.png" Width="150" Height="150"/>
+                                <TextBlock Text="База" FontSize="18" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="BorderColor" Storyboard.TargetProperty="Color" To="LightBlue"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState Name="Normal">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="BorderColor" Storyboard.TargetProperty="Color" To="#ecf0f1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="BtnMenu.User" BasedOn="{StaticResource BtnMenu}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="20">
+                            <Border.Background>
+                                <SolidColorBrush x:Name="BorderColor" Color="#ecf0f1"/>
+                            </Border.Background>
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <!--<Path Fill="Black" Stretch="Uniform" Width="150" Height="150"
+                                      Data="M64 96H0c0 123.7 100.3 224 224 224v144c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 
+                                      16-16V320C288 196.3 187.7 96 64 96zm384-64c-84.2 0-157.4 46.5-195.7 115.2 27.7 
+                                      30.2 48.2 66.9 59 107.6C424 243.1 512 147.9 512 32h-64z"/>-->
+                                <Image Source="/icons/Menu/User.png" Width="150" Height="150"/>
+                                <TextBlock Text="Пользователи" FontSize="18" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="BorderColor" Storyboard.TargetProperty="Color" To="LightBlue"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState Name="Normal">
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetName="BorderColor" Storyboard.TargetProperty="Color" To="#ecf0f1" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <Style TargetType="TextBox">
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="14"/>
@@ -11,6 +164,16 @@
             <Setter Property="Width" Value="200"/>
             <Setter Property="Height" Value="25"/>
             <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Cursor" Value="IBeam"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="#ecf0f1" CornerRadius="5" BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}" Padding="5,0">
+                            <ContentPresenter Content="{TemplateBinding Text}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
         <Style TargetType="PasswordBox">
             <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -25,7 +188,7 @@
             <Setter Property="FontFamily" Value="Roboto"/>
             <Setter Property="FontSize" Value="14"/>
         </Style>
-        <Style TargetType="Label" x:Key="Value">
+        <Style x:Key="Value" TargetType="Label">
             <Setter Property="FontFamily" Value="Roboto"/>
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="FontWeight" Value="Light"/>
@@ -33,7 +196,7 @@
         <Style TargetType="CheckBox">
             <Setter Property="FontFamily" Value="Roboto"/>
         </Style>
-        <Style TargetType="Button">
+        <Style TargetType="Button" x:Key="Btn">
             <Setter Property="FontFamily" Value="Roboto"/>
             <Setter Property="FontSize" Value="14"/>
             <Setter Property="Cursor" Value="Hand"/>
@@ -42,19 +205,17 @@
             <Setter Property="Height" Value="25"/>
             <Setter Property="Background" Value="#3498db"/>
             <Setter Property="Foreground" Value="#fff"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="3" Background="{TemplateBinding Property=Background}">
+                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
         </Style>
-        <Style TargetType="Button" x:Key="BtnMenu">
-            <Setter Property="Width" Value="325"/>
-            <Setter Property="Height" Value="325"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="Background" Value="#ECF1F6"/>
-            <Setter Property="FontSize" Value="18"/>
-            <Setter Property="FontWeight" Value="Medium"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Cursor" Value="Hand"/>
-        </Style>
-        <Style TargetType="Button" x:Key="BtnBack">
+        <Style x:Key="BtnBack" TargetType="Button">
             <Setter Property="Width" Value="50"/>
             <Setter Property="Height" Value="50"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
@@ -126,7 +287,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style TargetType="Button" x:Key="BtnEdit">
+        <Style x:Key="BtnEdit" TargetType="Button">
             <Setter Property="Width" Value="325"/>
             <Setter Property="Height" Value="325"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -167,14 +328,29 @@
             </Setter>
         </Style>
         <Style x:Key="BtnExcel" TargetType="Button">
-            <Setter Property="Width" Value="60"/>
-            <Setter Property="Height" Value="60"/>
+            <Setter Property="Width" Value="30"/>
+            <Setter Property="Height" Value="30"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate>
                         <Border>
                             <Image Source="/icons/Excel.png" Stretch="Uniform"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="BtnSave" TargetType="Button">
+            <Setter Property="Width" Value="25"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="0,0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border>
+                            <Image Source="/icons/Save.png" Stretch="Uniform"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>

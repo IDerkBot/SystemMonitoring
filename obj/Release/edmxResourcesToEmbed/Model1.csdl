@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbMonitoringModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Culture">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Period" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Ph" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Phosphor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Potassium" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Magnesium" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Calcium" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Humidity" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Nitrogen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Temperature" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Seedings" Relationship="Self.FK_Seeding_Table_1" FromRole="Culture" ToRole="Seeding" />
+  </EntityType>
+  <EntityType Name="Fertilizer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Asot" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PhosphorusOxide" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PotassiumOxide" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CalciumOxide" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MagnesiumOxide" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SulfurOxide" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Borum" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Natrium" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Zincum" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Cuprum" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Manganum" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NitrateNitrogen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AmmoniumNitrogen" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Iron" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Molybdenum" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Field">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="District" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Soil" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Seedings" Relationship="Self.FK_Seeding_Field" FromRole="Field" ToRole="Seeding" />
+  </EntityType>
+  <EntityType Name="Seeding">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdField" Type="Int32" />
+    <Property Name="IdCulture" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Culture" Relationship="Self.FK_Seeding_Table_1" FromRole="Seeding" ToRole="Culture" />
+    <NavigationProperty Name="Field" Relationship="Self.FK_Seeding_Field" FromRole="Seeding" ToRole="Field" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Access" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_Seeding_Table_1">
+    <End Role="Culture" Type="Self.Culture" Multiplicity="0..1" />
+    <End Role="Seeding" Type="Self.Seeding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Culture">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Seeding">
+        <PropertyRef Name="IdCulture" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Seeding_Field">
+    <End Role="Field" Type="Self.Field" Multiplicity="0..1" />
+    <End Role="Seeding" Type="Self.Seeding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Field">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Seeding">
+        <PropertyRef Name="IdField" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbMonitoringEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cultures" EntityType="Self.Culture" />
+    <EntitySet Name="Fertilizers" EntityType="Self.Fertilizer" />
+    <EntitySet Name="Fields" EntityType="Self.Field" />
+    <EntitySet Name="Seedings" EntityType="Self.Seeding" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK_Seeding_Table_1" Association="Self.FK_Seeding_Table_1">
+      <End Role="Culture" EntitySet="Cultures" />
+      <End Role="Seeding" EntitySet="Seedings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Seeding_Field" Association="Self.FK_Seeding_Field">
+      <End Role="Field" EntitySet="Fields" />
+      <End Role="Seeding" EntitySet="Seedings" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

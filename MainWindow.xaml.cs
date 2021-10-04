@@ -26,10 +26,9 @@ namespace SystemMonitoring
                 DB.SizeWindow = SystemParameters.PrimaryScreenWidth;
             else DB.SizeWindow = MainW.Width;
         }
-
         void MainW_Closed(object sender, EventArgs e)
         {
-            //if(ManagerPage.Page.Content.ToString().Contains("FieldMonitoring")) ManagerPage.FieldMonitoringPage.ClosePort();
+            //if (ManagerPage.Page.Content.ToString().Contains("FieldMonitoring")) ManagerPage.FieldMonitoringPage.ClosePort();
             Close();
         }
     }

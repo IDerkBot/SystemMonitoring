@@ -7,7 +7,7 @@ namespace SystemMonitoring
         void BtnBackMove_Click(object sender, RoutedEventArgs e)
         {
             if (ManagerPage.Page.Content.ToString().Contains("FieldMonitoring"))
-                ManagerPage.Page.Navigate(new FieldSelect());
+                ManagerPage.Page.Navigate(new AdminPages.FieldSelect());
             if (ManagerPage.Page.Content.ToString().Contains("FieldSelect"))
                 ManagerPage.Page.Navigate(new AdminMenu());
             else if (ManagerPage.Page.CanGoBack)

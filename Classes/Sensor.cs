@@ -3,13 +3,13 @@
     public class Sensor
     {
         public string ID { get; set; }
-        public string Humidity { get; set; }
-        public string Temperature { get; set; }
-        public string Acidity { get; set; }
-        public string Phosphorus { get; set; }
-        public string Calcium { get; set; }
-        public string Magniy { get; set; }
-        public string Calium { get; set; }
-        public string Asot { get; set; }
+        public string Humidity { get; set; } = "0";
+        public string Temperature { get; set; } = "0";
+        public string Acidity { get; set; } = "0";
+        public string Phosphorus { get; set; } = "0";
+        public string Calcium { get; set; } = "0";
+        public string Magniy { get; set; } = "0";
+        public string Calium { get; set; } = "0";
+        public string Asot { get; set; } = "0";
     }
 }

@@ -175,92 +175,92 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AdminEditPages\AddSensor.xaml.cs">
+    <Compile Include="Pages\AddSensor.xaml.cs">
       <DependentUpon>AddSensor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AuthReg\Reg.xaml.cs">
+    <Compile Include="Pages\Cultures.xaml.cs">
+      <DependentUpon>Cultures.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Reg.xaml.cs">
       <DependentUpon>Reg.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\FieldData.cs" />
     <Compile Include="Classes\ColorFlat.cs" />
     <Compile Include="Classes\FileManager.cs" />
-    <Compile Include="AdminPages\Dump.xaml.cs">
-      <DependentUpon>Dump.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="AdminEditPages\AddDistrict.xaml.cs">
+    <Compile Include="Pages\AddDistrict.xaml.cs">
       <DependentUpon>AddDistrict.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AdminEditPages\AddField.xaml.cs">
+    <Compile Include="Pages\AddField.xaml.cs">
       <DependentUpon>AddField.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AdminPages\Reports.xaml.cs">
+    <Compile Include="Pages\Reports.xaml.cs">
       <DependentUpon>Reports.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AdminPages\Users.xaml.cs">
+    <Compile Include="Pages\Users.xaml.cs">
       <DependentUpon>Users.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\Sensor.cs" />
     <Compile Include="Classes\Settings.cs" />
     <Compile Include="Culture.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModel.edmx</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Fertilizer.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Field.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Map.xaml.cs">
+    <Compile Include="Pages\Map.xaml.cs">
       <DependentUpon>Map.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Seeding.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="SensorDetails.xaml.cs">
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Seeding.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SensorDetails.xaml.cs">
       <DependentUpon>SensorDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Page Include="AdminEditPages\AddSensor.xaml">
+    <Page Include="Pages\AddSensor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AuthReg\Auth.xaml">
+    <Page Include="Pages\Cultures.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AuthReg\Reg.xaml">
+    <Page Include="Pages\Auth.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AdminPages\Dump.xaml">
+    <Page Include="Pages\Reg.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AdminPages\FieldMonitoring.xaml">
+    <Page Include="Pages\FieldMonitoring.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AdminPages\FieldSelect.xaml">
+    <Page Include="Pages\FieldSelect.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -272,52 +272,52 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AuthReg\Auth.xaml.cs">
+    <Compile Include="Pages\Auth.xaml.cs">
       <DependentUpon>Auth.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\DB.cs" />
-    <Compile Include="AdminPages\FieldMonitoring.xaml.cs">
+    <Compile Include="Pages\FieldMonitoring.xaml.cs">
       <DependentUpon>FieldMonitoring.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AdminPages\FieldSelect.xaml.cs">
+    <Compile Include="Pages\FieldSelect.xaml.cs">
       <DependentUpon>FieldSelect.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Map.xaml">
+    <Page Include="Pages\Map.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Menu\AdminMenu.xaml">
+    <Page Include="Pages\AdminMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AdminEditPages\AddDistrict.xaml">
+    <Page Include="Pages\AddDistrict.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AdminEditPages\AddField.xaml">
+    <Page Include="Pages\AddField.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AdminPages\Reports.xaml">
+    <Page Include="Pages\Reports.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AdminPages\Users.xaml">
+    <Page Include="Pages\Users.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SensorDetails.xaml">
+    <Page Include="Controls\SensorDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ManagerPage.cs" />
-    <Compile Include="Menu\AdminMenu.xaml.cs">
+    <Compile Include="Pages\AdminMenu.xaml.cs">
       <DependentUpon>AdminMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -337,12 +337,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DBModel.edmx">
+    <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DBModel.edmx.diagram">
-      <DependentUpon>DBModel.edmx</DependentUpon>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -362,7 +362,7 @@
     <Resource Include="icons\System\Свернуть.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="icons\Menu\GoodNotes.png" />
+    <Resource Include="icons\Menu\Notes.png" />
     <Resource Include="icons\Menu\Location.png" />
     <Resource Include="icons\Menu\Notepad.png" />
     <Resource Include="icons\Menu\User.png" />
@@ -382,15 +382,16 @@
     <Resource Include="icons\point.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DBModel.Context.tt">
+    <Resource Include="icons\Save.png" />
+    <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DBModel.Context.cs</LastGenOutput>
-      <DependentUpon>DBModel.edmx</DependentUpon>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DBModel.tt">
+    <Content Include="Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBModel.edmx</DependentUpon>
-      <LastGenOutput>DBModel.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
